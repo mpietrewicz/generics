@@ -1,5 +1,7 @@
 package workshop.java.generics;
 
+import java.util.HashMap;
+
 public class _II_GenerycznaKlasa {
 
 
@@ -14,7 +16,14 @@ public class _II_GenerycznaKlasa {
 
         GenericClass<Integer> integerOnly = new GenericClass<>();
         integerOnly.set(1);
-//        TODO zaimplementuj swoją generyczną klasę, analogicznie do przykładu.
+
+        GenericPass<HashMap<String, String>> genericPass = new GenericPass<HashMap<String, String>>();
+        HashMap<String, String> firstPass = new HashMap<String, String>();
+        firstPass.put("pass1", "test");
+        genericPass.setP(firstPass);
+
+        System.out.println(genericPass.getP());
+
     }
 
 
@@ -47,5 +56,17 @@ class GenericClass<T> {
 
     public T get() {
         return t;
+    }
+}
+
+class GenericPass<P> {
+    private P p;
+
+    public P getP() {
+        return p;
+    }
+
+    public void setP(P p) {
+        this.p = p;
     }
 }

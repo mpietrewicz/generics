@@ -1,9 +1,16 @@
 package workshop.java.generics;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class _III_GenerycznyInterfejs {
+
+    public static void main(String[] args) {
+        DoubleAndLis doubleAndLis = new DoubleAndLis();
+        System.out.println(doubleAndLis.doSomeOperation(22.0));
+        System.out.println(doubleAndLis.doReverseOperation(Arrays.asList("12", "33")));
+    }
 
 }
 
@@ -34,3 +41,21 @@ class StringAndInteger implements GenericInterface<String, Integer>
     }
 }
 
+interface GenericInterfaceForDoubleAndList<D, L> {
+    L doSomeOperation(D d);
+    D doReverseOperation(L l);
+}
+
+class DoubleAndLis implements GenericInterfaceForDoubleAndList<Double, List<String>> {
+
+
+    @Override
+    public List<String> doSomeOperation(Double value) {
+        return Arrays.asList("1", "7");
+    }
+
+    @Override
+    public Double doReverseOperation(List<String> values) {
+        return 44.0;
+    }
+}
