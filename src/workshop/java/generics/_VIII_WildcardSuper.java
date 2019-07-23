@@ -22,6 +22,13 @@ public class _VIII_WildcardSuper {
         supers.add(new GrandChildClass());
         addGrandChildren(supers);
 
+        List<Budynek> budynki = new ArrayList<>();
+        budynki.add(new Budynek());
+        dodajBudowle(budynki);
+
+        List<Mieszkanie> mieszkania = new ArrayList<>();
+        mieszkania.add(new Mieszkanie());
+        dodajBudowle(mieszkania);
     }
     /*
         TODO 2 Metoda przyjmująca generyczną kolekcję
@@ -30,6 +37,11 @@ public class _VIII_WildcardSuper {
     {
         familyMembers.add(new GrandChildClass());
         System.out.println(familyMembers);
+    }
+
+    public static void dodajBudowle(List<? super Mieszkanie> budowle) {
+        budowle.add(new Mieszkanie());
+        System.out.println(budowle);
     }
 }
 
@@ -47,5 +59,13 @@ class ChildClass extends SuperClass {
 }
 
 class GrandChildClass extends ChildClass{
+
+}
+
+class Budynek {
+
+}
+
+class Mieszkanie extends Budynek {
 
 }

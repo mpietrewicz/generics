@@ -3,7 +3,7 @@ package workshop.java.generics;
 public class _V_GenerycznyKonstruktor {
     public static void main(String[] args) {
 
-    new ClassWithGenericConstructor("",10,new Object());
+    new ClassWithGenericConstructor("",10,new String());
 
     }
 }
@@ -23,14 +23,14 @@ public class _V_GenerycznyKonstruktor {
 
  */
 
-class ClassWithGenericConstructor<T>
+class ClassWithGenericConstructor<T, V, S>
 {
     private T first;
-    private T second;
-    private T third;
+    private V second;
+    private S third;
 
 
-    public ClassWithGenericConstructor(T first, T second, T third) {
+    public ClassWithGenericConstructor(T first, V second, S third) {
         this.first = first;
         this.second = second;
         this.third = third;
